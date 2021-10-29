@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import dao.MemberDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -72,17 +73,19 @@ public class LoginController implements Initializable{
 
     @FXML
     void findid(MouseEvent event) {
-
+    	loadpage("findid");
     }
 
     @FXML
     void findpassword(MouseEvent event) {
-
+    	loadpage("findpassword");
     }
 
     @FXML
     void login(ActionEvent event) {
-    	if(txtid.getText().equals("admin") && txtpassword.getText().equals("1234")) {
+    	// 1. dao객체 메소드 호출 [ login 메소드의 아이디와 비밀번호 넣기
+    	boolean result = MemberDao.getMemberDao().login(txtid.getText(), txtpassword.getText());
+    	if(result) {
     		lblconfirm.setText("로그인 성공");
     	} else { // 아니면 실패
     		lblconfirm.setText("로그인 실패");
@@ -94,15 +97,10 @@ public class LoginController implements Initializable{
 		loadpage("signup");
 	}
 	
-	// 2. 생성자
-	
-	// 3. 메소드
 		// boarderpane center 변경
 	public void loadpage ( String page ) {
-		
-		Parent parent;
 		try {
-			parent = FXMLLoader.load(getClass().getResource("/fxml/"+page+".fxml"));
+		Parent parent = FXMLLoader.load(getClass().getResource("/fxml/"+page+".fxml"));
 			mainboardpane.setCenter(parent);
 		} catch (IOException e) {}
 		
