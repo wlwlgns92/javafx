@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Line endX="-92.0" endY="357.0" layoutX="98.0" layoutY="175.0" startX="-92.0" startY="-114.0" />
+      <ImageView fitHeight="393.0" fitWidth="632.0" layoutX="62.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@나이미.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

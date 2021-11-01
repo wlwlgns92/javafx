@@ -125,6 +125,47 @@ public class MemberDao {
 	
 	// 회원 탈퇴 메소드
 	
+	public boolean delete(String loginid) {
+		String sql = "delete from member where m_id=?";
+						// delete from 테이블명
+						// delete from 테이블명 where 조건 
+		
+		try {
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, loginid);
+			preparedStatement.executeUpdate();
+			return true; // 삭제 성공시 true
+		}catch (Exception e) {	}
+		return false; // db 오류
+	}
+	// 회원조회 메소드 [ 회원 아이디를 인수로 받아 회원정보 반환 ]
+	public Member getmember(String loginid) {
+		
+		// SQL 작성
+		String sql = "select * from member where m_id=?";
+		// SQL 연결
+		try {
+		preparedStatement = connection.prepareStatement(sql);
+		// SQL 설정
+		preparedStatement.setString(1, loginid);
+		// SQL 실행
+		resultSet = preparedStatement.executeQuery();
+		// SQL 결과
+		if(resultSet.next()) {
+			// 패스워드를 제외한 회원정보
+			Member member = new Member(resultSet.getString(2), "", resultSet.getString(4), resultSet.getString(5), resultSet.getInt(6));
+			return member; // 찾은 정보를 객체로 반환
+		}else {
+			
+		}
+		}
+		catch (Exception e) {}
+		return null; // 회원정보가 없을경우
+		
+		
+		 
+		
+	}
 	
 	
 	

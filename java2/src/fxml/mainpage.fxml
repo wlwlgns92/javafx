@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainpageborderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainpageController">
+   <left>
+      <AnchorPane fx:id="lp" prefHeight="600.0" prefWidth="246.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnhome" layoutX="3.0" layoutY="199.0" mnemonicParsing="false" onAction="#home" prefHeight="39.0" prefWidth="253.0" style="-fx-background-color: #ffffff;" text="Home">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@홈.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="btnproduct" layoutX="3.0" layoutY="256.0" mnemonicParsing="false" onAction="#product" prefHeight="39.0" prefWidth="253.0" style="-fx-background-color: #ffffff;" text="Product">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@제품.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="btncommunity" layoutX="2.0" layoutY="311.0" mnemonicParsing="false" onAction="#commnuity" prefHeight="39.0" prefWidth="253.0" style="-fx-background-color: #ffffff;" text="Community">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@게시판.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="btnchatting" layoutX="2.0" layoutY="366.0" mnemonicParsing="false" onAction="#chatting" prefHeight="39.0" prefWidth="253.0" style="-fx-background-color: #ffffff;" text="Chatting">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@채팅.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="btnmyinfo" layoutX="2.0" layoutY="425.0" mnemonicParsing="false" onAction="#myinfo" prefHeight="39.0" prefWidth="253.0" style="-fx-background-color: #ffffff;" text="My info">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@정보.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="btnlogout" layoutX="3.0" layoutY="482.0" mnemonicParsing="false" onAction="#logoout" prefHeight="39.0" prefWidth="253.0" style="-fx-background-color: #ffffff;" text="Logout">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@로그아웃.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <ImageView fitHeight="176.0" fitWidth="158.0" layoutX="51.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@KakaoTalk_20211101_133305009.png" />
+               </image></ImageView>
+            <Label layoutX="42.0" layoutY="132.0" prefHeight="27.0" prefWidth="133.0" text="Welcome">
+               <font>
+                  <Font name="HCR Dotum" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblloginid" layoutX="42.0" layoutY="159.0" prefHeight="27.0" prefWidth="133.0" text="Loginid">
+               <font>
+                  <Font name="HCR Dotum" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane fx:id="cp" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+         <children>
+            <Line endX="-92.0" endY="357.0" layoutX="98.0" layoutY="175.0" startX="-92.0" startY="-114.0" />
+         </children></AnchorPane>
+   </center>
+</BorderPane>

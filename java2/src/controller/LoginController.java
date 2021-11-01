@@ -10,13 +10,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 public class LoginController implements Initializable{
 										// Initializable 초기화 관련 메소드 제공
@@ -33,7 +36,11 @@ public class LoginController implements Initializable{
 	public static LoginController getinstance() {
 		return instance;
 	}
-	
+		// 로그인시 입렫된 아이디 반환
+	public String getid() {
+		return txtid.getText();
+	}
+
 	// fxml 실행시 초기값 설정 메소드
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -87,6 +94,25 @@ public class LoginController implements Initializable{
     	boolean result = MemberDao.getMemberDao().login(txtid.getText(), txtpassword.getText());
     	if(result) {
     		lblconfirm.setText("로그인 성공");
+    		
+    		// 기존 스테이지 종료
+    		btnlogin.getScene().getWindow().hide(); // 해당 버튼의 씬 윈도우 숨기기
+    		
+    		// 메인 스테이지
+    		Stage stage = new Stage();
+    		try {
+				Parent parent = FXMLLoader.load(getClass().getResource("/fxml/mainpage.fxml"));
+				Scene scene = new Scene(parent);
+				stage.setScene(scene);
+				stage.setResizable(false); // 스테이지 크기 고정
+				stage.setTitle("ㅋㅋㅋ"); // 스테이지 이름
+				// 스테이지 아이콘
+					// 1. 이미지 불러오기
+					Image image = new Image("file:D:\\조지훈\\java2\\src\\fxml\\아이콘.png");
+					stage.getIcons().add(image);
+				stage.show();
+			} catch (IOException e) {	}
+    		
     	} else { // 아니면 실패
     		lblconfirm.setText("로그인 실패");
     	}
